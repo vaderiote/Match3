@@ -11,3 +11,39 @@
 const char tile_chars[TILE_TYPES] = {'#', '@', '$', '%', '&' };
 
 char board[BOARD_SIZE][BOARD_SIZE];
+
+char random_tile() {
+    return tile_chars[rand() % TILE_TYPES];
+}
+
+
+void init_board() {
+    for (int y  = 0; y < BOARD_SIZE; y++) {
+        for (int x = 0; x < BOARD_SIZE; x++){
+            board[y][x] = random_tile();
+        }
+    }
+}
+
+int main(void){
+    const int screen_width = 800;
+    const int screen_height = 450;
+
+    InitWindow(screen_width, screen_height, "Raylib 2d ASCII MATCH");
+    SetTargetFPS(60);
+    srand(time(NULL));
+    init_board();
+    
+    while (!WindowShouldClose())
+    {
+        //Actualiza logica del juego
+
+        BeginDrawing();
+        ClearBackground(GRAY);
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+    return 0;
+}
