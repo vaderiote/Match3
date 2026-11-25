@@ -44,8 +44,8 @@ int main(void){
         for (int y = 0; y < BOARD_SIZE; y++) {
             for (int x = 0; x < BOARD_SIZE; x++){
                 Rectangle rect = {
-                    x * TILE_SIZE,
-                    y * TILE_SIZE,
+                    (float)(x * TILE_SIZE),
+                    (float)(y * TILE_SIZE),
                     TILE_SIZE,
                     TILE_SIZE
                 };
