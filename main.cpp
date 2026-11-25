@@ -49,7 +49,18 @@ int main(void){
                     TILE_SIZE,
                     TILE_SIZE
                 };
-            };
+
+                DrawRectangleLinesEx(rect, 1, DARKGRAY);
+
+                DrawTextEx(
+                    GetFontDefault(),
+                    TextFormat("%c", board[y][x]),
+                    (Vector2) {
+                        rect.x + 12, rect.y + 8
+                    },
+                    20, 1, WHITE
+                );
+            }
             
         }
 
